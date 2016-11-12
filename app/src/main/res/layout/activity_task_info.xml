@@ -31,30 +31,19 @@
         android:paddingTop="@dimen/activity.vertical.margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <EditText
-            android:id="@+id/task_title"
+        <TextView
+            android:id="@+id/task_info_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:enabled="true"
-            android:hint="@string/task.title.placeholder"
-            android:inputType="textCapSentences" />
+            android:textSize="@dimen/task.title.text.size" />
 
-        <EditText
-            android:id="@+id/task_description"
+        <TextView
+            android:id="@+id/task_info_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/view.margin"
-            android:hint="@string/task.description.placeholder"
-            android:inputType="textMultiLine" />
+            android:textSize="@dimen/task.text.text.size" />
 
-        <Button
-            android:id="@+id/save_task_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/view.margin"
-            android:background="@color/colorAccent"
-            android:text="@string/task.button.save"
-            android:textColor="@color/white" />
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

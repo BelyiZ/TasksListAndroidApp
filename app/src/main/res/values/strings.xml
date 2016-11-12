@@ -1,10 +1,33 @@
 <resources>
-    <string name="app_name">TasksList</string>
-    <string name="action_settings">Settings</string>
-    <string name="task.create.title">Create a new task</string>
-    <string name="task.title.placeholder">Task title</string>
-    <string name="task.description.placeholder">Task description</string>
-    <string name="task.button.save">Save</string>
-    <string name="task.details.menu.delete">Delete</string>
-    <string name="error.input.empty">Title or description is empty</string>
+    <string name="app.name">TasksList</string>
+
+    <!--START General strings-->
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <!--END General strings-->
+
+    <!--START Activities titles-->
+    <string name="activity.title.tasks.list">Список задач</string>
+    <string name="activity.title.create.task">Создание новой задачи</string>
+    <string name="activity.title.edit.task">Редактирование задачи</string>
+    <string name="activity.title.task.info">Информация о задаче</string>
+    <!--END Activities titles-->
+
+    <!--START Create task activity-->
+    <string name="task.title.placeholder">Заголовок</string>
+    <string name="task.description.placeholder">Описание</string>
+    <string name="task.button.save">Создать</string>
+    <string name="task.details.menu.delete">Удалить</string>
+    <string name="error.create.title.empty">Необходимо указать заголовок</string>
+    <!--END Create task activity-->
+
+    <!--START Task info activity-->
+    <!--deleting task-->
+    <string name="delete.task.error">Не удалось удалить задачу</string>
+    <string name="delete.task.success">Задача удалена</string>
+    <string name="delete.task.confirmation.title">Удаление задачи</string>
+    <string name="delete.task.confirmation.message">Вы действительно хотите удалить задачу?</string>
+
+    <!--END Task info activity-->
+
 </resources>

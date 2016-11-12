@@ -3,6 +3,7 @@ package ru.zurekat.taskslist.activities
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -19,8 +20,11 @@ class CreateTaskActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_task)
 
-        val saveBtn = findViewById(R.id.save_task_btn) as Button
+        val toolbar = findViewById(R.id.toolbar) as Toolbar
+        toolbar.setTitle(R.string.activity_title_create_task)
+        setSupportActionBar(toolbar)
 
+        val saveBtn = findViewById(R.id.save_task_btn) as Button
         saveBtn.setOnClickListener({ view ->
             val taskTitleEditText = findViewById(R.id.task_title) as EditText
             val title = taskTitleEditText.text.toString()
@@ -28,17 +32,15 @@ class CreateTaskActivity : AppCompatActivity() {
             val taskDescriptionEditText = findViewById(R.id.task_description) as EditText
             val text: String = taskDescriptionEditText.text.toString()
 
-            if (title.isEmpty() or text.isEmpty()) {
-                val inputEmpty = getString(R.string.error_input_empty)
+            if (title.isBlank()) {
+                val inputEmpty = getString(R.string.error_create_title_empty)
 
                 Toast.makeText(applicationContext, inputEmpty, Toast.LENGTH_LONG).show()
             } else {
-                val task = Task(title, text, Date())
-                val id = task.save()
-
+                val task = Task(title.trim(), text.trim(), Date())
+                task.save()
                 startActivity(Intent(this, TasksListActivity::class.java))
-
-                Log.d("New Task", "ID: $id")
+                finish()
             }
         })
     }
@@ -49,15 +51,6 @@ class CreateTaskActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        val id = item?.itemId
-
-        when (id) {
-            R.id.action_delete -> {
-                //delete task
-                return true
-            }
-        }
-
         return super.onOptionsItemSelected(item)
     }
 

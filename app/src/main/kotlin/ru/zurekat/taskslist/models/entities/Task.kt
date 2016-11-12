@@ -29,6 +29,7 @@ class Task : Model {
         this.title = title
         this.text = text
         this.createDate = createDate
+        this.changeDate = createDate
     }
 
     constructor()
